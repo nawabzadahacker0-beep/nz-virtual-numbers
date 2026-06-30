@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Numbers website By Nawab Zada Hacker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #060913 0%, #010204 100%);
+        }
+        .cyber-border {
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+        }
+    </style>
+</head>
+<body class="text-gray-200 min-h-screen flex flex-col justify-between font-sans">
+
+    <header class="border-b border-green-500/30 bg-black/60 backdrop-blur-md p-6 text-center cyber-border">
+        <h1 class="text-4xl font-extrabold tracking-widest text-green-400 drop-shadow-[0_0_8px_rgba(74,222,128,0.4)]">
+             VIRTUAL NUMBERS 
+        </h1>
+        <p class="text-sm font-bold tracking-widest text-red-500 mt-2">
+            Developer Nawab Zada Hacker ☠️🙌🦅
+        </p>
+    </header>
+
+    <main class="max-w-6xl w-full mx-auto p-6 flex-grow">
+        
+        <div class="mb-8 p-4 bg-slate-900/50 border border-slate-800 rounded-xl flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <h2 class="text-xl font-bold text-slate-200">Select Target Service Category</h2>
+                <p class="text-xs text-slate-400 mt-0.5">Click any service card to invoke secure live virtual numbers.</p>
+            </div>
+            <div class="flex gap-2">
+                <select id="country-selector" class="bg-black border border-slate-700 rounded-lg px-3 py-2 text-sm text-green-400 focus:outline-none focus:border-green-500">
+                    <option value="7">Russia (+7)</option>
+                    <option value="380">Ukraine (+380)</option>
+                    <option value="1">USA (+1)</option>
+                    <option value="44">United Kingdom (+44)</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="categories-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div class="col-span-full text-center py-12 text-slate-500 animate-pulse">
+                  secure API Handshake... Loading Services please wait...
+            </div>
+        </div>
+    </main>
+
+    <div class="max-w-6xl w-full mx-auto px-6 mb-8">
+        <div class="bg-slate-950 border border-green-500/20 p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_0_15px_rgba(34,197,94,0.05)]">
+            <div class="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
+                <div class="w-12 h-12 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center text-xl border border-green-500/20">
+                    📢
+                </div>
+                <div>
+                    <h4 class="text-base font-bold text-slate-100">Join Support Channel</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Get live updates, premium bypass tips, and developer support.</p>
+                </div>
+            </div>
+            <a href="https://whatsapp.com/channel/0029VbB47ttDDmFNztpnZf2m" target="_blank" class="px-5 py-2.5 bg-green-600 hover:bg-green-500 text-black font-extrabold text-xs rounded-xl transition-all tracking-wider uppercase flex items-center gap-2 cursor-pointer whitespace-nowrap">
+                 Follow Channel
+            </a>
+        </div>
+    </div>
+
+    <div id="lock-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="bg-slate-950 border border-red-500/40 rounded-2xl p-6 max-w-md w-full text-center shadow-[0_0_20px_rgba(239,68,68,0.2)]">
+            <div class="w-16 h-16 bg-red-500/10 border border-red-500/30 text-red-500 rounded-full flex items-center justify-center mx-auto text-2xl mb-4 animate-bounce">🛡️</div>
+            <h3 class="text-2xl font-bold text-slate-100">Access Restricted</h3>
+            <p class="text-sm text-slate-400 mt-2 px-2">Contact with admin for access this website all features.</p>
+            
+            <a href="https://api.whatsapp.com/send?phone=971528243405&text=Hello%20Nawab%20Zada%20Hacker,%20I%20want%20to%20get%20access%20password%20for%20your%20Virtual%20Numbers%20Website." target="_blank" class="mt-6 inline-flex items-center justify-center gap-2 w-full py-3 bg-green-600 hover:bg-green-500 text-black font-extrabold text-sm rounded-xl transition-all shadow-lg shadow-green-600/20 uppercase tracking-wider cursor-pointer">
+                💬 Contact in WhatsApp
+            </a>
+
+            <div class="mt-6 pt-4 border-t border-slate-900 flex gap-2">
+                <input type="password" id="admin-pass-input" placeholder="Enter Token Key" class="bg-black border border-slate-800 rounded-lg px-3 py-1.5 text-xs w-full text-center focus:outline-none focus:border-slate-600 text-gray-300">
+                <button onclick="tryAdminUnlock()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-lg transition-colors cursor-pointer">Unlock</button>
+            </div>
+            <button onclick="closeLockModal()" class="text-xs text-slate-500 hover:text-slate-400 mt-4 underline block mx-auto cursor-pointer">Back to overview</button>
+        </div>
+    </div>
+
+    <div id="activation-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+        <div class="bg-slate-950 border-2 border-green-500/40 rounded-2xl p-6 max-w-md w-full cyber-border relative">
+            <h3 class="text-xl font-bold text-green-400 flex items-center gap-2 mb-1">Terminal Running</h3>
+            <p class="text-xs text-slate-500 mb-4 border-b border-slate-900 pb-2">Do not close this website while waiting for logs.</p>
+            
+            <div class="bg-black/50 border border-slate-800 p-4 rounded-xl text-center mb-4">
+                <span class="text-xs text-slate-400 block mb-1 uppercase tracking-wider">Your Assigned Number</span>
+                <div class="flex justify-center items-center gap-3">
+                    <h2 id="assigned-number" class="text-2xl font-mono font-bold text-yellow-400 tracking-wide">Fetching...</h2>
+                    <button onclick="copyNumber()" class="text-xs bg-slate-800 hover:bg-slate-700 text-white px-2 py-1 rounded transition-all cursor-pointer">Copy</button>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center min-h-[120px] flex flex-col justify-center items-center">
+                <div id="otp-sync-loader" class="flex flex-col items-center gap-2">
+                    <span class="w-5 h-5 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></span>
+                    <span class="text-xs text-green-400 font-mono animate-pulse">Waiting for incoming OTP SMS... Logs refresh auto</span>
+                </div>
+                <div id="sms-box-display" class="hidden">
+                    <span class="text-xs text-red-500 font-bold uppercase block mb-1"> SMS RECEIVED:</span>
+                    <h2 id="final-otp" class="text-4xl font-black text-white tracking-widest bg-black/60 px-4 py-2 rounded border border-green-500/20">------</h2>
+                </div>
+            </div>
+
+            <button onclick="closeActivationModal()" class="mt-5 w-full py-2 bg-red-950/40 hover:bg-red-900/60 border border-red-500/30 text-red-400 font-semibold text-sm rounded-lg transition-all cursor-pointer">Cancel / Terminate Order</button>
+        </div>
+    </div>
+
+    <footer class="text-center p-4 bg-black/40 border-t border-slate-900 text-slate-600 text-xs tracking-wider">
+        &copy; 2026 Nawab ZADA Hacker | This Tool is Pnly for Educational Perpose.
+    </footer>
+
+    <script>
+        let pollingInterval = null;
+        let currentTzid = null;
+        let sessionToken = null; // Background authorization memory tracker
+
+        async function loadServices() {
+            const container = document.getElementById('categories-container');
+            try {
+                const response = await fetch('/api/get-services');
+                const data = await response.json();
+
+                if (!data.success) {
+                    container.innerHTML = <div class="col-span-full text-center py-6 text-red-500">❌ Database synchronization failed. Check API key balance.</div>;
+                    return;
+                }
+
+                container.innerHTML = '';
+                Object.entries(data.services).slice(0, 30).forEach(([name, details]) => {
+                    const card = document.createElement('div');
+                    card.className = "bg-slate-900/30 border border-slate-800/80 hover:border-green-500/30 rounded-xl p-4 flex flex-col justify-between items-center text-center transition-all duration-200 transform hover:-translate-y-0.5 hover:bg-slate-900/60 cursor-pointer";
+                    card.setAttribute('onclick', handleServiceClick('${name}'));
+                    
+                    card.innerHTML = `
+                        <span class="text-sm font-bold text-white uppercase tracking-wide block">${name}</span>
+                        <span class="text-[10px] text-green-400/70 font-mono mt-2 px-1.5 py-0.5 bg-green-500/5 rounded border border-green-500/10">In Stock: ${details.count || 'Active'}</span>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (err) {
+                container.innerHTML = <div class="col-span-full text-center py-6 text-red-500">⚠️ Connection Refused by Host.</div>;
+            }
+        }
+
+        // Intercept function for access verification
+        function handleServiceClick(serviceName) {
+            if (!sessionToken) {
+                // Not authenticated -> Trigger the premium lock screen
+                document.getElementById('lock-modal').classList.remove('hidden');
+                document.getElementById('lock-modal').classList.add('flex');
+            } else {
+                // Authenticated -> proceed with order routine
+                triggerNumberOrder(serviceName);
+            }
+        }
+
+        async function tryAdminUnlock() {
+            const inputPass = document.getElementById('admin-pass-input').value;
+            try {
+                const response = await fetch('/api/verify-auth', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: inputPass })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    sessionToken = data.token;
+                    closeLockModal();
+                    alert("🔓 Admin Verification Bypass Successful! All Features Unlocked.");
+                } else {
+                    alert("❌ Invalid Token Security Code. Access Denied.");
+                }
+            } catch (e) {
+                alert("Error handling handshake.");
+            }
+        }
+
+        async function triggerNumberOrder(serviceName) {
+            const countryCode = document.getElementById('country-selector').value;
+            
+            document.getElementById('activation-modal').classList.remove('hidden');
+            document.getElementById('activation-modal').classList.add('flex');
+            document.getElementById('assigned-number').innerText = "Reserving...";
+            document.getElementById('otp-sync-loader').classList.remove('hidden');
+            document.getElementById('sms-box-display').classList.add('hidden');
+
+            try {
+                const response = await fetch('/api/get-number', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'x-auth-token': sessionToken // Sending secure validation token
+                    },
+                    body: JSON.stringify({ service: serviceName, country: countryCode })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('assigned-number').innerText = "+" + data.number;
+                    currentTzid = data.tzid;
+                    startSmsPolling(data.tzid);
+                } else {
+                    alert("Error: " + data.message);
+                    closeActivationModal();
+                }
+            } catch (e) {
+                alert("Failed to contact secure backend module.");
+                closeActivationModal();
+            }
+        }
+
+        function startSmsPolling(tzid) {
+            if(pollingInterval) clearInterval(pollingInterval);
+
+            pollingInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(/api/get-otp/${tzid}, {
+                        headers: { 'x-auth-token': sessionToken }
+                    });
+                    const data = await response.json();
+
+                    if(data.success && data.status === 'RECEIVED') {
+                        clearInterval(pollingInterval);
+                        document.getElementById('otp-sync-loader').classList.add('hidden');
+                        document.getElementById('sms-box-display').classList.remove('hidden');
+                        document.getElementById('final-otp').innerText = data.otp;
+                    }
+                } catch(err) {
+                    console.log("Polling drop...");
+                }
+            }, 4000);
+        }
+
+        function copyNumber() {
+            const num = document.getElementById('assigned-number').innerText;
+            if(num !== "Reserving..." && num !== "Fetching...") {
+                navigator.clipboard.writeText(num);
+                alert("number copied in clipboard!");
+            }
+        }
+
+        function closeLockModal() {
+            document.getElementById('lock-modal').classList.add('hidden');
+            document.getElementById('lock-modal').classList.remove('flex');
+        }
+
+        function closeActivationModal() {
+            if(pollingInterval) clearInterval(pollingInterval);
+            document.getElementById('activation-modal').classList.add('hidden');
+            document.getElementById('activation-modal').classList.remove('flex');
+        }
+
+        window.onload = loadServices;
+    </script>
+</body>
+</html>
